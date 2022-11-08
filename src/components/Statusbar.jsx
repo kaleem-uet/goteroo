@@ -4,9 +4,9 @@ import { useState } from "react";
 
 const Statusbar = (props) => {
   return (
-    <nav class="bg-blue-200">
-      <div class="max-w-5xl mx-90 px-2 sm:px-6 lg:px-6">
-        <div class="relative flex items-center justify-between h-10">
+    <nav className="bg-blue-200">
+      <div className="max-w-5xl mx-90 px-2 sm:px-6 lg:px-6">
+        <div className="relative flex items-center justify-between h-10">
           {props.subTotal ? (
             <>
               <span>{`Spend £${1000 - props.subTotal} to get a pick of super rare item`}</span>
