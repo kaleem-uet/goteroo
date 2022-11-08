@@ -25,7 +25,7 @@ export default function Carousel() {
 
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8000/api/carousel/${searchParams.get("category")}`)
+      .get(`https://goterooooapi.herokuapp.com/api/carousel/${searchParams.get("category")}`)
       .then((res) => {
         setItems(res.data[0]);
       });
@@ -46,7 +46,7 @@ export default function Carousel() {
         email,
       };
       axios
-        .post("http://127.0.0.1:8000/api/carousel//cart", payload)
+        .post("https://goterooooapi.herokuapp.com/api/carousel//cart", payload)
         .then((res) => {
           if (res.data.disableCheckout === true) {
             setDisableCheckout(res.data.disableCheckout);
@@ -70,7 +70,7 @@ export default function Carousel() {
 
   const viewCart = () => {
     axios
-      .get("http://127.0.0.1:8000/api/carousel//checkout")
+      .get("https://goterooooapi.herokuapp.com/api/carousel//checkout")
       .then((res) => {
         if (res.data.disableCheckout == false) {
           //Proceed to checkout
@@ -98,7 +98,7 @@ export default function Carousel() {
   const showDamage = (name) => {
     const payload = { name };
     axios
-      .post("http://127.0.0.1:8000/api/carousel/damage", payload)
+      .post("https://goterooooapi.herokuapp.com/api/carousel/damage", payload)
       .then((res) => {
         if (res.data) setDamage("visible");
       })
@@ -110,7 +110,7 @@ export default function Carousel() {
   const viewTier = (tier) => {
     if (tier == "Tier 1") {
       axios
-        .get("http://127.0.0.1:8000/api/carousel//show-tier-1")
+        .get("https://goterooooapi.herokuapp.com/api/carousel//show-tier-1")
         .then((res) => {
           //refresh carousel for only tier 1 items
           console.log(res.data.items);
@@ -124,7 +124,7 @@ export default function Carousel() {
         });
     } else if (tier == "Tier 2") {
       axios
-        .get("http://127.0.0.1:8000/api/carousel//show-tier-2")
+        .get("https://goterooooapi.herokuapp.com/api/carousel//show-tier-2")
         .then((res) => {
           //refresh carousel for only tier 2 items
           setTier2Visibility("visible");
@@ -138,7 +138,7 @@ export default function Carousel() {
     }
     if (tier == "Tier 3") {
       axios
-        .get("http://127.0.0.1:8000/api/carousel//show-tier-3")
+        .get("https://goterooooapi.herokuapp.com/api/carousel//show-tier-3")
         .then((res) => {
           //refresh carousel for only tier 3 items
           setTier3Visibility("visible");

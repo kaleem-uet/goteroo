@@ -28,7 +28,7 @@ export default function Cart() {
 
     axios
       .post(
-        "http://ec2-3-99-218-57.ca-central-1.compute.amazonaws.com:8000/api/stripe-checkout",
+        "https://goterooooapi.herokuapp.com/api/stripe-checkout",
         payload
       )
       .then((res) => {

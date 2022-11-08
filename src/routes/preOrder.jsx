@@ -11,7 +11,7 @@ export default function PreOrder() {
     // const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://127.0.0.1:8000/api/pre-order`).then((res) => {
+    axios.get(`https://goterooooapi.herokuapp.com/api/pre-order`).then((res) => {
       setItems(res.data);
     });
   }, []);
@@ -20,7 +20,7 @@ export default function PreOrder() {
   const filterBatch = (batch) => {
     const payload = { batch };
     axios
-      .post("http://127.0.0.1:8000/api/pre-order/batch", payload)
+      .post("https://goterooooapi.herokuapp.com/api/pre-order/batch", payload)
       .then((res) => {
       if(res.data != "No Fresh Stock")
       {
